@@ -15,15 +15,14 @@ class Persona {
     public:
     Persona();
     Persona(int cedula, string nombre);
+    ~Persona();
+
     int getCedula() const;
     void setCedula(int cedula);
-
     string getNombre() const;
     void setNombre(const string& nombre);
 
     string toString() const;
-
-    ~Persona();
 };
 
 

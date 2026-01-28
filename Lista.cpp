@@ -46,11 +46,11 @@ void Lista::agregarFinal(Persona* persona) {
 }
 
 bool Lista::eliminaInicio() {
-
+return false;
 }
 
 bool Lista::eliminaFinal() {
-
+return false;
 }
 
 string Lista::toString() {

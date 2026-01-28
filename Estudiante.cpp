@@ -12,7 +12,7 @@ Estudiante::Estudiante() {
 
 Estudiante::Estudiante(int cedula, string nombre, string carrera) {
     Persona(cedula, nombre);
-    this ->carrera = carrera;
+    this->carrera = carrera;
 }
 string Estudiante::getCarrera() const {
     return carrera;
