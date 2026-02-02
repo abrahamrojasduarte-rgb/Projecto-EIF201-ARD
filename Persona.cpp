@@ -13,6 +13,7 @@ Persona::Persona(int cedula, string nombre){
     this->nombre = nombre;
 }
 
+
 int Persona::getCedula() const {
     return cedula;
 }

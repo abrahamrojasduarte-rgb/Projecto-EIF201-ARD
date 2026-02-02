@@ -9,20 +9,21 @@
 using namespace std;
 
 class Persona {
-    private:
+protected:
     int cedula;
     string nombre;
-    public:
+
+public:
     Persona();
     Persona(int cedula, string nombre);
-    ~Persona();
+    virtual ~Persona();
 
     int getCedula() const;
     void setCedula(int cedula);
     string getNombre() const;
     void setNombre(const string& nombre);
 
-    string toString() const;
+    virtual string toString() const;
 };
 
 

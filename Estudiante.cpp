@@ -4,14 +4,12 @@
 
 #include "Estudiante.h"
 
-Estudiante::Estudiante() {
-    Persona();
+Estudiante::Estudiante(): Persona(){
     carrera = "";
 }
 
 
-Estudiante::Estudiante(int cedula, string nombre, string carrera) {
-    Persona(cedula, nombre);
+Estudiante::Estudiante(int cedula, string nombre, string carrera) :Persona(cedula, nombre){
     this->carrera = carrera;
 }
 string Estudiante::getCarrera() const {
@@ -26,3 +24,5 @@ string Estudiante::toString() const {
         <<"Carrera = "<<carrera<<endl;
     return ss.str();
 }
+
+Estudiante::~Estudiante() {}

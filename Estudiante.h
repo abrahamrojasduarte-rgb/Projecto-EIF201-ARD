@@ -13,9 +13,10 @@ private:
 public:
     Estudiante();
     Estudiante(int cedula, string nombre, string carrera);
+    ~Estudiante() override;
     string getCarrera() const;
     void setCarrera(string carrera);
-    string toString() const;
+    string toString() const override;
 };
 
 

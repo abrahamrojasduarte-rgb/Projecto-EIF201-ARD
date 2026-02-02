@@ -13,4 +13,6 @@ add_executable(Proyecto_EIF201_Abraham main.cpp
         Lista.cpp
         Lista.h
         Sistema.cpp
-        Sistema.h)
+        Sistema.h
+        Profesor.cpp
+        Profesor.h)
