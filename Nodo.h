@@ -13,6 +13,7 @@ private:
 public:
     Nodo();
     Nodo(Persona *persona, Nodo *siguiente);
+    ~Nodo();
     void setPersona(Persona *persona);
     void setSiguiente(Nodo *siguiente);
     Nodo* getSiguiente() const;

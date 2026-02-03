@@ -18,13 +18,11 @@ public:
     Lista();
     ~Lista();
     bool vacia();
-    void agregarInicio(Persona* persona);
-    void agregarFinal(Persona* persona);
-    bool eliminaInicio();
-    bool eliminaFinal();
-    string toString();
-    void eliminar(int cedula);
-    bool buscar(int cedula);
+    bool agregarInicio(Persona* persona);
+    bool agregarFinal(Persona* persona);
+    string toString() const;
+    bool eliminar(int cedula);
+    Persona* buscar(int cedula)const ;
 };
 
 

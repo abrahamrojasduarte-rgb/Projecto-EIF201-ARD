@@ -5,11 +5,10 @@ using namespace std;
 int main() {
     Sistema sistema;
 
-    // Registrar estudiantes
+
     sistema.registrarEstudiante(12345, "Juan Pérez", "Ingeniería en Sistemas");
     sistema.registrarEstudiante(67890, "Ana González", "Matemáticas");
 
-    // Mostrar todos los estudiantes
     sistema.mostrarEstudiantes();
 
     return 0;

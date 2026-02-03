@@ -28,3 +28,8 @@ void Nodo::setSiguiente(Nodo* siguiente) {
 Nodo* Nodo::getSiguiente() const {
     return siguiente;
 }
+Nodo::~Nodo() {
+    delete persona;
+    persona = nullptr;
+    siguiente = nullptr;
+}

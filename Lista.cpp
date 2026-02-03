@@ -25,60 +25,97 @@ bool Lista::vacia() {
     return primero==nullptr;
 }
 
-void Lista::agregarInicio(Persona* persona) {
+bool Lista::agregarInicio(Persona* persona) {
+    if (persona == nullptr) {
+        return false;
+    }
+    if (buscar(persona->getCedula()) != nullptr) {
+        delete persona;
+        return false;
+    }
     Nodo* nuevo = new Nodo(persona, primero);
     if (vacia()) {
         ultimo = nuevo;
     }
     primero = nuevo;
     cantidad++;
+    return true;
 }
 
-void Lista::agregarFinal(Persona* persona) {
+bool Lista::agregarFinal(Persona* persona) {
+    if (persona == nullptr) {
+        return false;
+    }
+    if (buscar(persona->getCedula()) != nullptr) {
+        delete persona;
+        return false;
+    }
     Nodo* nuevo = new Nodo(persona, nullptr);
     if (vacia()) {
-        this->agregarInicio(persona);
+        primero = nuevo;
+        ultimo = nuevo;
     }else {
         ultimo->setSiguiente(nuevo);
-        ultimo = ultimo->getSiguiente();
-        cantidad++;
+        ultimo = nuevo;
     }
+    cantidad++;
+    return true;
 }
 
-bool Lista::eliminaInicio() {
-return false;
-}
 
-bool Lista::eliminaFinal() {
-return false;
-}
-
-string Lista::toString() {
+string Lista::toString() const{
     stringstream ss;
     Nodo* actual = primero;
 
     while (actual != nullptr) {
-        ss << actual->getPersona()->toString() << endl;
-        if (actual->getSiguiente() != nullptr) {
-            ss << " -> ";
-        }
+        ss << actual->getPersona()->toString() << "---"<<endl;
         actual = actual->getSiguiente();
     }
 
     return ss.str();
 }
 
-void Lista::eliminar(int cedula) {
+bool Lista::eliminar(int cedula) {
+    if (vacia()) {
+        return false;
+    }
+    if (primero->getPersona()->getCedula() == cedula) {
+        Nodo* borrar = primero;
+        primero = primero->getSiguiente();
+        if (primero == nullptr) {
+            ultimo = nullptr;
+        }
+        delete borrar;
+        cantidad--;
+        return true;
+    }
 
+    Nodo* aux = primero;
+    while (aux->getSiguiente() != nullptr) {
+        if (aux->getSiguiente()->getPersona()->getCedula() == cedula) {
+            Nodo* borrar = aux->getSiguiente();
+            aux->setSiguiente(borrar->getSiguiente());
+
+            if (borrar == ultimo) {
+                ultimo = aux;
+            }
+
+            delete borrar;
+            cantidad--;
+            return true;
+        }
+        aux = aux->getSiguiente();
+    }
+
+    return false;
 }
-
-bool Lista::buscar(int cedula) {
+Persona* Lista::buscar(int cedula) const {
     Nodo* actual = primero;
     while (actual != nullptr) {
         if (actual->getPersona()->getCedula() == cedula) {
-            return true;
+            return actual->getPersona();
         }
         actual = actual->getSiguiente();
     }
-    return false;
+    return nullptr;
 }
