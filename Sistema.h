@@ -6,14 +6,17 @@
 #define MAIN_CPP_SISTEMA_H
 #include "Lista.h"
 #include "Estudiante.h"
+#include "Profesor.h"
 
 class Sistema {
 private:
     Lista listaEstudiantes;
-
+    Lista listaProfesors;
 public:
     void registrarEstudiante(int cedula, string nombre, string carrera);
-    void mostrarEstudiantes();
+    string mostrarEstudiantes()const;
+    void registrarProfesor(int cedula, string nombre, string materia);
+    string mostrarProfesores() const;
 };
 
 

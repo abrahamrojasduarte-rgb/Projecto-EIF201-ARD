@@ -4,7 +4,7 @@
 
 #include "Sistema.h"
 void Sistema::registrarEstudiante(int cedula, string nombre, string carrera) {
-    Estudiante* nuevoEstudiante = new Estudiante(cedula, nombre, carrera);\
+    Estudiante* nuevoEstudiante = new Estudiante(cedula, nombre, carrera);
     bool s = listaEstudiantes.agregarFinal(nuevoEstudiante);
 
     if (!s) {
@@ -12,6 +12,22 @@ void Sistema::registrarEstudiante(int cedula, string nombre, string carrera) {
     }
 }
 
-void Sistema::mostrarEstudiantes() {
-    cout << listaEstudiantes.toString();
+string Sistema::mostrarEstudiantes() const{
+    stringstream ss;
+    ss << listaEstudiantes.toString();
+    return ss.str();
+}
+void Sistema::registrarProfesor(int cedula, string nombre, string materia) {
+    Profesor* nuevoProfesor = new Profesor(cedula, nombre, materia);
+    bool s = listaProfesors.agregarFinal(nuevoProfesor);
+
+    if (!s) {
+        cout<<"No se pudo agregar, profesor ya ingresado"<<endl;
+    }
+}
+
+string Sistema::mostrarProfesores()const {
+    stringstream ss;
+    ss << listaProfesors.toString();
+    return ss.str();
 }

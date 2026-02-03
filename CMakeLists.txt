@@ -15,4 +15,6 @@ add_executable(Proyecto_EIF201_Abraham main.cpp
         Sistema.cpp
         Sistema.h
         Profesor.cpp
-        Profesor.h)
+        Profesor.h
+        Curso.cpp
+        Curso.h)
