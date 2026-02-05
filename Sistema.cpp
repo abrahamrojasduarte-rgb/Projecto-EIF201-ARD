@@ -31,3 +31,17 @@ string Sistema::mostrarProfesores()const {
     ss << listaProfesors.toString();
     return ss.str();
 }
+
+string Sistema::mostrarCursosDisponibles() {
+    stringstream ss;
+    ss<<listaCursos.toString();
+    return ss.str();
+}
+
+void Sistema::escogerCursos(int cedula, string codCurso, int dia, int hora) {
+    Persona* perry = listaEstudiantes.buscar(cedula);
+    if (perry != nullptr) {
+        Estudiante* Phineas
+    }
+
+}

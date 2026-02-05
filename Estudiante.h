@@ -5,11 +5,12 @@
 #ifndef MAIN_CPP_ESTUDIANTE_H
 #define MAIN_CPP_ESTUDIANTE_H
 #include "Persona.h"
-
+#include "Horario.h"
 
 class Estudiante: public Persona {
 private:
     string carrera;
+    Horario* miHorario;
 public:
     Estudiante();
     Estudiante(int cedula, string nombre, string carrera);
@@ -17,6 +18,8 @@ public:
     string getCarrera() const;
     void setCarrera(string carrera);
     string toString() const override;
+    Horario* getHorario() const;
+
 };
 
 

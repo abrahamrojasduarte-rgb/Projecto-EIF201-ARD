@@ -17,4 +17,10 @@ add_executable(Proyecto_EIF201_Abraham main.cpp
         Profesor.cpp
         Profesor.h
         Curso.cpp
-        Curso.h)
+        Curso.h
+        NodoCurso.cpp
+        NodoCurso.h
+        ListaCurso.cpp
+        ListaCurso.h
+        Horario.cpp
+        Horario.h)

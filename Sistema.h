@@ -12,11 +12,14 @@ class Sistema {
 private:
     Lista listaEstudiantes;
     Lista listaProfesors;
+    Lista listaCursos;
 public:
     void registrarEstudiante(int cedula, string nombre, string carrera);
     string mostrarEstudiantes()const;
     void registrarProfesor(int cedula, string nombre, string materia);
     string mostrarProfesores() const;
+    string mostrarCursosDisponibles();
+    void escogerCursos(int cedula, string codCurso, int dia, int hora);
 };
 
 
