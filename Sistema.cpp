@@ -40,8 +40,7 @@ string Sistema::mostrarCursosDisponibles() {
 
 void Sistema::escogerCursos(int cedula, string codCurso, int dia, int hora) {
     Persona* perry = listaEstudiantes.buscar(cedula);
-    if (perry != nullptr) {
-        Estudiante* Phineas
-    }
+    if (perry == ) {
 
+    }
 }

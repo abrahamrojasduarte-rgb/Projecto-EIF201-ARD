@@ -28,6 +28,10 @@ string Estudiante::toString() const {
     return ss.str();
 }
 
+bool Estudiante::esEstudiante() const {
+    return true;
+}
+
 Estudiante::~Estudiante() {
     delete miHorario;
     miHorario = nullptr;

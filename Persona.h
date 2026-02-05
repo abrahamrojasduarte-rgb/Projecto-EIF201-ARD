@@ -24,6 +24,7 @@ public:
     void setNombre(const string& nombre);
 
     virtual string toString() const;
+    virtual bool esEstudiante() const;
 };
 
 

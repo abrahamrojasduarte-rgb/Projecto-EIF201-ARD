@@ -68,7 +68,7 @@ string Lista::toString() const{
     Nodo* actual = primero;
 
     while (actual != nullptr) {
-        ss << actual->getPersona()->toString() << "---"<<endl;
+        ss << actual->getPersona()->toString() << "<->"<<endl;
         actual = actual->getSiguiente();
     }
 

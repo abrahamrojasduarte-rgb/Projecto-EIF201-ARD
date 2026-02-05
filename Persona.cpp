@@ -38,3 +38,7 @@ string Persona::toString() const {
         <<"Nombre = "<<nombre<<endl;
     return ss.str();
 }
+
+bool Persona::esEstudiante() const {
+    return false;
+}
