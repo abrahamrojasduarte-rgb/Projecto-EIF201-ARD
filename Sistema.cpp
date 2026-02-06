@@ -82,7 +82,7 @@ void Sistema::registrarCursos(int cedulaP, string codCurso, string nomCurso) {
         Curso* nuevoCurso = new Curso(codCurso, nomCurso, profesor);
 
         // Agregar el curso a la lista de cursos
-        if (listaCursos.agregarFinal(nuevoCurso)) {
+        if (listaCursos.agregarFinalC(nuevoCurso)) {
             cout << "Curso agregado :)" << endl;
         } else {
             cout << "Curso no se pudo agregar :( " << endl;

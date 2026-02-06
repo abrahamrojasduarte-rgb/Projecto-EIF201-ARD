@@ -15,8 +15,8 @@ private:
     int cantidad;
 public:
     bool vacia()const;
-    bool estaRepetido(string codigo);
-    bool agregarFinal(Curso* curso);
+    bool estaRepetidoC(string codigo);
+    bool agregarFinalC(Curso* curso);
     Curso* buscarC(string codigo)const;
     bool eliminarC(string codigo);
     string toString()const;

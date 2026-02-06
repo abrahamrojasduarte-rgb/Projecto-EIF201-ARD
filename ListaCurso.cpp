@@ -7,7 +7,7 @@ bool ListaCurso::vacia() const{
     return primero == nullptr;
 }
 
-bool ListaCurso::estaRepetido(string codigo) {
+bool ListaCurso::estaRepetidoC(string codigo) {
     NodoCurso* actual = primero;
     while (actual != nullptr) {
         if (actual->getCurso()->getCodigo() == codigo) {
@@ -18,11 +18,11 @@ bool ListaCurso::estaRepetido(string codigo) {
     return false;
 }
 
-bool ListaCurso::agregarFinal(Curso *curso) {
+bool ListaCurso::agregarFinalC(Curso *curso) {
     if (curso == nullptr) {
         return false;
     }
-    if (estaRepetido(curso->getCodigo())) {
+    if (estaRepetidoC(curso->getCodigo())) {
         return false;
     }
     NodoCurso* nuevoN = new NodoCurso(curso, nullptr);
