@@ -29,7 +29,7 @@ bool ListaCurso::agregarFinal(Curso *curso) {
     if (vacia()) {
         primero = nuevoN;
         ultimo = nuevoN;
-    }else {
+    } else {
         ultimo->setSiguiente(nuevoN);
         ultimo = nuevoN;
     }
@@ -86,7 +86,8 @@ string ListaCurso::toString() const {
     stringstream ss;
     NodoCurso* actual = primero;
     while (actual != nullptr) {
-        ss << actual->getCurso() << "   \n";
+        ss << actual->getCurso()->toString() <<endl;
+        actual = actual->getSiguiente();
     }
     return ss.str();
 }

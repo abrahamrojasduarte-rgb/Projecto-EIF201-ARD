@@ -25,7 +25,7 @@ public:
 
     virtual string toString() const = 0 ;
     virtual bool esEstudiante() const;
-    virtual bool esProfessor() const;
+    virtual bool esProfesor() const;
 };
 
 

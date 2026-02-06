@@ -37,6 +37,6 @@ bool Persona::esEstudiante() const {
     return false;
 }
 
-bool Persona::esProfessor() const {
+bool Persona::esProfesor() const {
     return false;
 }

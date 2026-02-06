@@ -40,12 +40,7 @@ bool Curso::setProfesor(Profesor *profesor) {
 string Curso::toString() const {
     stringstream ss;
     ss<<"Nombre :"<<this->nombre<<endl
-        <<"Codigo :"<<this->codigo<<endl;
-    if (profesorAsignado != nullptr) {
-        ss << "Profesor asignado:\n"
-           << profesorAsignado->toString();
-    } else {
-        ss << "Profesor asignado: (no asignado)\n";
-    }
+        <<"Codigo :"<<this->codigo<<endl
+        <<"Profesor :"<<this->profesorAsignado->getNombre()<<endl;
     return ss.str();
 }

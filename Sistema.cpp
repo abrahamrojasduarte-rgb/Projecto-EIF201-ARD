@@ -61,17 +61,34 @@ string Sistema::mostrarCursosDisponibles()const {
 }
 
 void Sistema::registrarCursos(int cedulaP, string codCurso, string nomCurso) {
-    Persona* Ferb = listaProfesors.buscar(cedulaP);
-        if (Ferb != nullptr && Ferb->esProfessor()) {
-            Profesor* candace = (Profesor*)Ferb;
-            Curso* funda = new Curso(codCurso, nomCurso, candace);
-            if (listaCursos.agregarFinal(funda)) {
-                cout<<"Curso agregado :)"<<endl;
-            }else {
-                cout<<"Curso no se puedo agregar :( "<<endl;
-            }
+    /*Persona* Ferb = listaProfesors.buscar(cedulaP);
+    if (Ferb != nullptr && Ferb->esProfesor()) {
+        Profesor* candace = (Profesor*)Ferb;
+        Curso* funda = new Curso(codCurso, nomCurso, candace);
+        if (listaCursos.agregarFinal(funda)) {
+            cout<<"Curso agregado :)"<<endl;
         }else {
-            cout<<"Profesor invalido "<<endl;
+            cout<<"Curso no se puedo agregar :( "<<endl;
         }
+    }else {
+        cout<<"Profesor invalido "<<endl;
+    }*/
+    Persona* persona = listaProfesors.buscar(cedulaP);  // Obtener el puntero a Persona (que es Profesor)
+
+    if (persona != nullptr && persona->esProfesor()) {  // Verificamos que es un Profesor
+        Profesor* profesor = (Profesor*) persona;  // Ahora sabemos que es un Profesor
+
+        // Crear el curso con el profesor asignado
+        Curso* nuevoCurso = new Curso(codCurso, nomCurso, profesor);
+
+        // Agregar el curso a la lista de cursos
+        if (listaCursos.agregarFinal(nuevoCurso)) {
+            cout << "Curso agregado :)" << endl;
+        } else {
+            cout << "Curso no se pudo agregar :( " << endl;
+        }
+    } else {
+        cout << "Profesor inválido." << endl;
+    }
 }
 

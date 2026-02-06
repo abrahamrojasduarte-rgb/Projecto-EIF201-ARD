@@ -22,7 +22,7 @@ string Profesor::toString() const {
     return ss.str();
 }
 
-bool Profesor::esProfessor() const {
+bool Profesor::esProfesor() const {
     return true;
 }
 string Profesor::getMateria()const {
