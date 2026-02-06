@@ -21,7 +21,7 @@ public:
     int getCedula() const;
     void setCedula(int cedula);
     string getNombre() const;
-    void setNombre(const string& nombre);
+    void setNombre(const string& nom);
 
     virtual string toString() const = 0 ;
     virtual bool esEstudiante() const;

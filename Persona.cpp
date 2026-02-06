@@ -5,7 +5,7 @@
 #include "Persona.h"
 Persona::Persona() {
     this->cedula = 0;
-    this->nombre = "";
+    this->nombre = " ";
 }
 
 Persona::Persona(int cedula, string nombre){

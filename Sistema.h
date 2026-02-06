@@ -18,7 +18,7 @@ public:
     void registrarEstudiante(int cedula, string nombre, string carrera);
     string mostrarEstudiantes()const;
 
-    void registrarProfesor(int cedula, string nombre, string materia);
+    void registrarProfesor(int cedulaP, string nombre, string materia);
     string mostrarProfesores() const;
 
     void escogerCursos(int cedulaE, string codCurso, int dia, int hora);

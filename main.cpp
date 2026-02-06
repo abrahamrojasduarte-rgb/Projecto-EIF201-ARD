@@ -9,7 +9,7 @@ int main() {
 
     // Registrar algunos profesores
     Profesor* profesor1 = new Profesor(1, "Ana Rodríguez", "Matemáticas");
-    Profesor* profesor2 = new Profesor(2, "Carlos Martínez", "Física");
+    Profesor* profesor2 = new Profesor(2, "Carlos Martíneez", "Física");
     sistema.registrarProfesor(profesor1->getCedula(), profesor1->getNombre(), profesor1->getMateria());
     sistema.registrarProfesor(profesor2->getCedula(), profesor2->getNombre(), profesor2->getMateria());
 

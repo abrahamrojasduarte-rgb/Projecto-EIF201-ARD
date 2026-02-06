@@ -61,9 +61,9 @@ string Sistema::mostrarCursosDisponibles()const {
 }
 
 void Sistema::registrarCursos(int cedulaP, string codCurso, string nomCurso) {
-    Persona* ferb = listaProfesors.buscar(cedulaP);
-        if (ferb != nullptr && ferb->esProfessor()) {
-            Profesor* candace = (Profesor*)ferb;
+    Persona* Ferb = listaProfesors.buscar(cedulaP);
+        if (Ferb != nullptr && Ferb->esProfessor()) {
+            Profesor* candace = (Profesor*)Ferb;
             Curso* funda = new Curso(codCurso, nomCurso, candace);
             if (listaCursos.agregarFinal(funda)) {
                 cout<<"Curso agregado :)"<<endl;
