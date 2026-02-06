@@ -86,7 +86,7 @@ string ListaCurso::toString() const {
     stringstream ss;
     NodoCurso* actual = primero;
     while (actual != nullptr) {
-        ss << actual->getCurso()->toString() <<endl;
+        ss << actual->getCurso()->toString() <<"------------------------------------------"<<endl;
         actual = actual->getSiguiente();
     }
     return ss.str();

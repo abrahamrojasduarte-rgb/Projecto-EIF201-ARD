@@ -35,22 +35,20 @@ string Sistema::mostrarProfesores()const {
 
 void Sistema::escogerCursos(int cedulaE, string codCurso, int dia, int hora) {
     Persona* perry = listaEstudiantes.buscar(cedulaE);
-    if (perry != nullptr) {
-        if (perry->esEstudiante()) {
-            Estudiante* Phineas = (Estudiante*)perry;
-            Curso* verano = listaCursos.buscarC(codCurso);
-            if (verano != nullptr) {
-                if (Phineas->getHorario()->asignarCurso(verano, dia, hora)) {
-                    cout<<"Si pudo bro, curso asignado "<<endl;
-                }else {
-                    cout<<":( Horario ocupado :("<<endl;
-                }
-            }else {
-                cout<<"Curso invalido "<<endl;
+    if (perry != nullptr && perry->esEstudiante()) {
+        Estudiante* Phineas = (Estudiante*)perry;
+        Curso* verano = listaCursos.buscarC(codCurso);
+        if (verano != nullptr) {
+            if (Phineas->getHorario() != nullptr && Phineas->getHorario()->asignarCurso(verano, dia, hora)) {
+                cout << "Curso asignado con éxito." << endl;
+            } else {
+                cout << "Horario ocupado." << endl;
             }
-        }else {
-            cout<<"Estudiante invalido "<<endl;
+        } else {
+            cout << "Curso no encontrado." << endl;
         }
+    } else {
+        cout << "Estudiante inválido." << endl;
     }
 }
 
@@ -73,19 +71,15 @@ void Sistema::registrarCursos(int cedulaP, string codCurso, string nomCurso) {
     }else {
         cout<<"Profesor invalido "<<endl;
     }*/
-    Persona* persona = listaProfesors.buscar(cedulaP);  // Obtener el puntero a Persona (que es Profesor)
-
-    if (persona != nullptr && persona->esProfesor()) {  // Verificamos que es un Profesor
-        Profesor* profesor = (Profesor*) persona;  // Ahora sabemos que es un Profesor
-
-        // Crear el curso con el profesor asignado
+    Persona* persona = listaProfesors.buscar(cedulaP);
+    if (persona != nullptr && persona->esProfesor()) {
+        Profesor* profesor = (Profesor*)persona;
         Curso* nuevoCurso = new Curso(codCurso, nomCurso, profesor);
 
-        // Agregar el curso a la lista de cursos
         if (listaCursos.agregarFinalC(nuevoCurso)) {
-            cout << "Curso agregado :)" << endl;
+            cout << "Curso agregado con éxito." << endl;
         } else {
-            cout << "Curso no se pudo agregar :( " << endl;
+            cout << "No se pudo agregar el curso." << endl;
         }
     } else {
         cout << "Profesor inválido." << endl;
