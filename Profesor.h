@@ -15,6 +15,8 @@ public:
     Profesor(int,string, string materia);
     ~Profesor();
     string toString() const override;
+    bool esProfessor() const override;
+    string getMateria()const;
 };
 
 

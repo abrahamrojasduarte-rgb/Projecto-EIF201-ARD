@@ -19,7 +19,7 @@ public:
     void setCarrera(string carrera);
     string toString() const override;
     Horario* getHorario() const;
-
+    bool esEstudiante() const override;
 };
 
 

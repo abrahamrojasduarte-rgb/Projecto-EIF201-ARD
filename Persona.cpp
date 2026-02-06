@@ -32,9 +32,11 @@ void Persona::setNombre(const string& nombre) {
 
 Persona::~Persona() {
 }
-string Persona::toString() const {
-    stringstream ss;
-    ss<<"Cedula = "<<cedula<<endl
-        <<"Nombre = "<<nombre<<endl;
-    return ss.str();
+
+bool Persona::esEstudiante() const {
+    return false;
+}
+
+bool Persona::esProfessor() const {
+    return false;
 }

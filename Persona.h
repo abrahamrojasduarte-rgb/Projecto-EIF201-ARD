@@ -23,7 +23,9 @@ public:
     string getNombre() const;
     void setNombre(const string& nombre);
 
-    virtual string toString() const;
+    virtual string toString() const = 0 ;
+    virtual bool esEstudiante() const;
+    virtual bool esProfessor() const;
 };
 
 

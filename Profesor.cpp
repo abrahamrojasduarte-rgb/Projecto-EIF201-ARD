@@ -16,7 +16,15 @@ Profesor::~Profesor() {}
 
 string Profesor::toString() const {
     stringstream ss;
-    ss << Persona::toString() << endl;
-    ss << "Materia " <<materia << endl;
+    ss<<"Cedula = "<<getCedula()<<endl
+        <<"Nombre = "<<getNombre()<<endl
+        << "Materia " <<materia << endl;
     return ss.str();
+}
+
+bool Profesor::esProfessor() const {
+    return true;
+}
+string Profesor::getMateria()const {
+    return materia;
 }

@@ -32,16 +32,46 @@ string Sistema::mostrarProfesores()const {
     return ss.str();
 }
 
-string Sistema::mostrarCursosDisponibles() {
+
+void Sistema::escogerCursos(int cedulaE, string codCurso, int dia, int hora) {
+    Persona* perry = listaEstudiantes.buscar(cedulaE);
+    if (perry != nullptr) {
+        if (perry->esEstudiante()) {
+            Estudiante* Phineas = (Estudiante*)perry;
+            Curso* verano = listaCursos.buscarC(codCurso);
+            if (verano != nullptr) {
+                if (Phineas->getHorario()->asignarCurso(verano, dia, hora)) {
+                    cout<<"Si pudo bro, curso asignado "<<endl;
+                }else {
+                    cout<<":( Horario ocupado :("<<endl;
+                }
+            }else {
+                cout<<"Curso invalido "<<endl;
+            }
+        }else {
+            cout<<"Estudiante invalido "<<endl;
+        }
+    }
+}
+
+string Sistema::mostrarCursosDisponibles()const {
     stringstream ss;
-    ss<<listaCursos.toString();
+    ss << listaCursos.toString();
     return ss.str();
 }
 
-void Sistema::escogerCursos(int cedula, string codCurso, int dia, int hora) {
-    Persona* perry = listaEstudiantes.buscar(cedula);
-    if (perry != nullptr) {
-        Estudiante* Phineas
-    }
-
+void Sistema::registrarCursos(int cedulaP, string codCurso, string nomCurso) {
+    Persona* ferb = listaProfesors.buscar(cedulaP);
+        if (ferb != nullptr && ferb->esProfessor()) {
+            Profesor* candace = (Profesor*)ferb;
+            Curso* funda = new Curso(codCurso, nomCurso, candace);
+            if (listaCursos.agregarFinal(funda)) {
+                cout<<"Curso agregado :)"<<endl;
+            }else {
+                cout<<"Curso no se puedo agregar :( "<<endl;
+            }
+        }else {
+            cout<<"Profesor invalido "<<endl;
+        }
 }
+

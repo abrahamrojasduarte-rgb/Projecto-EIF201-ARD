@@ -9,20 +9,23 @@ Estudiante::Estudiante(): Persona(){
     miHorario = new Horario();
 }
 
-
 Estudiante::Estudiante(int cedula, string nombre, string carrera) :Persona(cedula, nombre){
     this->carrera = carrera;
     miHorario = new Horario();
 }
+
 string Estudiante::getCarrera() const {
     return carrera;
 }
+
 void Estudiante::setCarrera(string carrera) {
     this->carrera = carrera;
 }
+
 string Estudiante::toString() const {
     stringstream ss;
-    ss <<Persona::toString() <<endl
+    ss<<"Cedula = "<<cedula<<endl
+        <<"Nombre = "<<nombre<<endl
         <<"Carrera = "<<carrera<<endl;
     ss <<miHorario->toString() <<endl;
     return ss.str();
@@ -31,4 +34,11 @@ string Estudiante::toString() const {
 Estudiante::~Estudiante() {
     delete miHorario;
     miHorario = nullptr;
+}
+
+bool Estudiante::esEstudiante() const {
+    return true;
+}
+Horario* Estudiante::getHorario() const {
+    return miHorario;
 }
