@@ -8,8 +8,8 @@ int main() {
     Sistema sistema;
 
     // Registrar algunos profesores
-    Profesor* profesor1 = new Profesor(1, "Ana Rodríguez", "Matemáticas");
-    Profesor* profesor2 = new Profesor(2, "Carlos Martíneez", "Física");
+    Profesor* profesor1 = new Profesor(1, "Ana Rodriguez", "Matemticas");
+    Profesor* profesor2 = new Profesor(2, "Carlos Martinez", "Fisica");
     sistema.registrarProfesor(profesor1->getCedula(), profesor1->getNombre(), profesor1->getMateria());
     sistema.registrarProfesor(profesor2->getCedula(), profesor2->getNombre(), profesor2->getMateria());
 
@@ -18,14 +18,18 @@ int main() {
     cout<<sistema.mostrarProfesores();  // Mostrar profesores
 
     // Crear algunos cursos
-    sistema.registrarCursos(1, "EIF-101", "Programación I");  // Profesor 1 (Ana Rodríguez) para "Programación I"
+    sistema.registrarCursos(1, "EIF-101", "Programacion I");  // Profesor 1 (Ana Rodríguez) para "Programación I"
     sistema.registrarCursos(2, "EIF-102", "Estructuras de Datos");  // Profesor 2 (Carlos Martínez) para "Estructuras de Datos"
+
+    Curso* n = new Curso("234", "Matem", profesor1);
+    cout<<n->toString()<<endl;
 
     // Mostrar los cursos registrados
     cout << "\nCursos registrados:" << endl;
     cout<<sistema.mostrarCursosDisponibles();  // Mostrar cursos
 
     // Limpiar memoria
+    delete n;
     delete profesor1;
     delete profesor2;
 

@@ -40,7 +40,7 @@ void Sistema::escogerCursos(int cedulaE, string codCurso, int dia, int hora) {
         Curso* verano = listaCursos.buscarC(codCurso);
         if (verano != nullptr) {
             if (Phineas->getHorario() != nullptr && Phineas->getHorario()->asignarCurso(verano, dia, hora)) {
-                cout << "Curso asignado con éxito." << endl;
+                cout << "Curso asignado con exito." << endl;
             } else {
                 cout << "Horario ocupado." << endl;
             }
@@ -48,7 +48,7 @@ void Sistema::escogerCursos(int cedulaE, string codCurso, int dia, int hora) {
             cout << "Curso no encontrado." << endl;
         }
     } else {
-        cout << "Estudiante inválido." << endl;
+        cout << "Estudiante invalido." << endl;
     }
 }
 
@@ -77,12 +77,12 @@ void Sistema::registrarCursos(int cedulaP, string codCurso, string nomCurso) {
         Curso* nuevoCurso = new Curso(codCurso, nomCurso, profesor);
 
         if (listaCursos.agregarFinalC(nuevoCurso)) {
-            cout << "Curso agregado con éxito." << endl;
+            cout << "Curso agregado con exito." << endl;
         } else {
             cout << "No se pudo agregar el curso." << endl;
         }
     } else {
-        cout << "Profesor inválido." << endl;
+        cout << "Profesor invalido." << endl;
     }
 }
 
