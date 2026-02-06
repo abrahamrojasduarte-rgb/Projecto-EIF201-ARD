@@ -4,6 +4,7 @@
 
 #ifndef MAIN_CPP_SISTEMA_H
 #define MAIN_CPP_SISTEMA_H
+#include "Persona.h"
 #include "Lista.h"
 #include "Estudiante.h"
 #include "Profesor.h"
