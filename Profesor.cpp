@@ -18,7 +18,7 @@ string Profesor::toString() const {
     stringstream ss;
     ss<<"Cedula = "<<getCedula()<<endl
         <<"Nombre = "<<getNombre()<<endl
-        << "Materia " <<materia << endl;
+        << "Materia = " <<materia << endl;
     return ss.str();
 }
 
