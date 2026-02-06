@@ -40,9 +40,6 @@ Estudiante::~Estudiante() {
     miHorario = nullptr;
 }
 
-bool Estudiante::esEstudiante() const {
-    return true;
-}
 Horario* Estudiante::getHorario() const {
     return miHorario;
 }
